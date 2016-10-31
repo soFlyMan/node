@@ -4,6 +4,12 @@ process
  
 commonJs规范
 
+**require**
+
+node中没有全局命名空间的说法
+
+需使用require方法将其他模块导入到当前模块
+
 ###url
 - url.parse('http://www.imooc.com/video/6710')
 
