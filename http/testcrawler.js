@@ -5,7 +5,7 @@ var url='http://www.imooc.com/learn/61';
 
 function filterChapters(html){
 var $=cheerio.load(html);
-var charpters=$('.navbar');
+var charpters=$('.chapter');
 // [{
 // 	chapterTitle:'',
 // 	video:[
