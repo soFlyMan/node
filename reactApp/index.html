@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react</title>
+</head>
+<body>
+	<div id="app"></div>
+	<div id="example"></div>
+	<script src="index.js"></script>
+	<script src="./bower_components/react/react.js"></script>
+	<script src="./bower_components/react/react-dom.js"></script>
+	<script src="./main.js"></script>
+	<script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+
+	<script type="text/babel">
+		var HelloMessage=React.createClass({
+		getInitialState:function(){
+		alert('init');
+		return {
+		   opacity:1.0,
+		   fontSize:'12px',
+		   color:'blue'
+
+		}
+		},
+		render:function(){
+		return <div style={this.state}>hello react</div>;
+		},
+		componentWillMount:function(){
+		alert('will');
+		},
+		componentDidMount:function(){
+		alert('did');
+		var _self=this;
+		window.setTimeout(function(){
+		   _self.setState({
+		   opacity:0.5,
+		   fontSize:30
+		   })
+
+		},2000)
+		}
+		});
+
+		ReactDOM.render(<HelloMessage/>,document.getElementById('example'));
+	</script>
+
+	<div id="example"></div>
+   
+</body>
+</html>
